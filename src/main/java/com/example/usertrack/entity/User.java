@@ -25,8 +25,6 @@ public class User {
     @NotBlank(message = "Full name must not be empty")
     private String fullName;
 
-    @NotBlank(message = "Mobile number must not be empty")
-    @Size(min = 10, max = 10, message = "Mobile number must be a valid 10-digit number")
     @ValidMobileNumber(message = "Invalid Mobile Number") //custom validation
     //@Pattern(regexp = "^(\\+91|0)?\\d{10}$", message = "Invalid mobile number format")
     private String mobNum;

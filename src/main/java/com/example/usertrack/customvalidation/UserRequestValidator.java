@@ -12,9 +12,9 @@ public class UserRequestValidator implements ConstraintValidator<ValidMobileNumb
             return false;
         }
 
+        // Remove any leading "+" or "0" or country code
+        mobNum = mobNum.replaceAll("^(\\+\\d{1,3}[- ]?|0)", "");
 
-        mobNum = mobNum.replaceAll("^(\\+\\d{1,3}[- ]?|0)", ""); //regex to remove country code or 0 prefix
-
-        return mobNum.matches("\\d{10}"); //sends only 10 digits to be added
+        return mobNum.matches("\\d{10}"); //ONLY 10 DIGITS
     }
 }

@@ -22,7 +22,7 @@ public class CommandLineConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         List<Manager> managers = Arrays.asList(
-                new Manager(UUID.randomUUID(), "Manager One", "manager1@example.com", true),
+                new Manager(UUID.randomUUID(), "Manager One", "manager1@example.com", false),
                 new Manager(UUID.randomUUID(), "Manager Two", "manager2@example.com", true),
                 new Manager(UUID.randomUUID(), "Manager Three", "manager3@example.com", true),
                 new Manager(UUID.randomUUID(), "Manager Four", "manager4@example.com", true),

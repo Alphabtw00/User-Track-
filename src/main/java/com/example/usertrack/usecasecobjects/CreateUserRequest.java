@@ -10,5 +10,4 @@ public class CreateUserRequest {
     private String mobNum;
     private String panNum;
     private UUID managerId;
-
 }
