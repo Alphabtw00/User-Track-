@@ -1,6 +1,7 @@
 package com.example.usertrack.controller;
 
 import com.example.usertrack.entity.User;
+import com.example.usertrack.repository.UserRepository;
 import com.example.usertrack.service.UserService;
 import com.example.usertrack.usecasecobjects.UpdateUserRequest;
 import com.example.usertrack.usecasecobjects.CreateUserRequest;
@@ -19,10 +20,13 @@ import java.util.UUID;
 @RestController
 public class UserController {
     private final UserService userService;
+    private final UserRepository userRepository;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, UserRepository userRepository) {
         this.userService = userService;
+        this.userRepository = userRepository;
     }
+
 
     @PostMapping("/create_user")
     public ResponseEntity<String> createUser(@RequestBody @Valid CreateUserRequest createUserRequest) {
